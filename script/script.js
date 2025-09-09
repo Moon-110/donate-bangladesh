@@ -151,27 +151,27 @@ donateButton2.addEventListener('click', () => {
     alert(`'Successfully donated  ${donateAmount2}'`)
 })
 // donate money cart 3
-const cartAmountElement2 = document.getElementById('cart2-amount');
-const inputField2 = document.getElementById('cart2-input-field');
-const donateButton2 = document.getElementById('cart2-donate-btn');
+const cartAmountElement3 = document.getElementById('cart3-amount');
+const inputField3 = document.getElementById('cart3-input-field');
+const donateButton3 = document.getElementById('cart3-donate-btn');
 
 
 myAmountElement.textContent=myAmount;
-cartAmountElement2.textContent=cartAmount;
+cartAmountElement3.textContent=cartAmount;
 
-donateButton2.addEventListener('click', () => {
-    const donateAmount2 = parseInt(inputField2.value);
+donateButton3.addEventListener('click', () => {
+    const donateAmount3 = parseInt(inputField3.value);
 
      const data= {
         date: new Date().toLocaleTimeString()
     }
 
-    if(isNaN(donateAmount2) || donateAmount2<=0){
+    if(isNaN(donateAmount3) || donateAmount3<=0){
         alert('Please enter a valid positive number for your donation')
         return;
     }
 
-    if(donateAmount2> myAmount){
+    if(donateAmount3> myAmount){
         alert('You do not have enough money.');
         return;
     }
@@ -182,7 +182,7 @@ donateButton2.addEventListener('click', () => {
     const newCart = document.createElement('div');
     newCart.innerHTML = `
     <div class="border-1 border-gray-300 max-w-[1400px] mx-auto p-5 mt-5">
-            <h2><span id="donated-amount">${donateAmount2}</span> Taka is Donated for famine-2024 at Feni, Bangladesh</h2>
+            <h2><span id="donated-amount">${donateAmount3}</span> Taka is Donated for famine-2024 at Feni, Bangladesh</h2>
 
             <input type="text" placeholder="${data.date}" class="input-field input border-none h-6 w-full" />
             
@@ -192,13 +192,13 @@ donateButton2.addEventListener('click', () => {
                       
 
 
-    myAmount -= donateAmount2;
-    cartAmount += donateAmount2;
+    myAmount -= donateAmount3;
+    cartAmount += donateAmount3;
 
     myAmountElement.textContent=myAmount;
-    cartAmountElement2.textContent=cartAmount;
+    cartAmountElement3.textContent=cartAmount;
 
-    inputField2.value='';
+    inputField3.value='';
 
-    alert(`'Successfully donated  ${donateAmount2}'`)
+    alert(`'Successfully donated  ${donateAmount3}'`)
 })
