@@ -3,6 +3,8 @@
 //     return element;
 // }
 
+// const { createElement } = require("react");
+
 
 // function toggle
 function handleToggle(id){
@@ -53,6 +55,10 @@ cartAmountElement.textContent=cartAmount;
 donateButton.addEventListener('click', () => {
     const donateAmount = parseInt(inputField.value);
 
+    //  const data= {
+    //     date: new Date().toLocaleTimeString()
+    // }
+
     if(isNaN(donateAmount) || donateAmount<=0){
         alert('Please enter a valid positive number for your donation')
     }
@@ -60,6 +66,22 @@ donateButton.addEventListener('click', () => {
     if(donateAmount> myAmount){
         alert('You do not have enough money.');
     }
+
+
+    // const historyContainer = document.getElementById('history-container');
+    
+    // const newCart = document.createElement('div');
+    // newCart.innerHTML = `
+    // <div class="border-1 border-gray-300 max-w-[1400px] mx-auto p-5 mt-5">
+    //         <h2><span id="donated-amount">${donateAmount}</span> Taka is Donated for famine-2024 at Feni, Bangladesh</h2>
+
+    //         <input type="text" placeholder="${data.date}" class="input-field input border-none h-6 w-full" />
+            
+    //         </div>
+    // `;
+    // historyContainer.append(newCart);
+
+
 
     myAmount -= donateAmount;
     cartAmount += donateAmount;
