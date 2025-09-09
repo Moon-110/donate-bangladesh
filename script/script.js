@@ -181,7 +181,7 @@ donateButton3.addEventListener('click', () => {
     
     const newCart = document.createElement('div');
     newCart.innerHTML = `
-    <div class="border-1 border-gray-300 max-w-[1400px] mx-auto p-5 mt-5">
+    <div class="border-1 border-gray-300 p-5 mt-5">
             <h2><span id="donated-amount">${donateAmount3}</span> Taka is Donated for famine-2024 at Feni, Bangladesh</h2>
 
             <input type="text" placeholder="${data.date}" class="input-field input border-none h-6 w-full" />
