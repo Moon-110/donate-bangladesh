@@ -36,3 +36,38 @@ document.getElementById('btn-history').addEventListener('click', function(){
     handleToggleButton('btn-history');
 })
 
+
+
+// donate money for cart 1
+const myAmountElement = document.getElementById("my-amount");
+const cartAmountElement = document.getElementById('cart1-amount');
+const inputField = document.getElementById('cart1-input-field');
+const donateButton = document.getElementById('cart1-donate-btn');
+
+let myAmount = 5500;
+let cartAmount = 0;
+
+myAmountElement.textContent=myAmount;
+cartAmountElement.textContent=cartAmount;
+
+donateButton.addEventListener('click', () => {
+    const donateAmount = parseInt(inputField.value);
+
+    if(isNaN(donateAmount) || donateAmount<=0){
+        alert('Please enter a valid positive number for your donation')
+    }
+
+    if(donateAmount> myAmount){
+        alert('You do not have enough money.');
+    }
+
+    myAmount -= donateAmount;
+    cartAmount += donateAmount;
+
+    myAmountElement.textContent=myAmount;
+    cartAmountElement.textContent=cartAmount;
+
+    inputField.value='';
+
+    alert(`'Successfully donated  ${donateAmount}'`)
+})
